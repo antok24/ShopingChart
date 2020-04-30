@@ -18,10 +18,10 @@ class ProductIndex extends Component
     public function render()
     {
 
-        $products = Product::paginate(12);
+        $products = Product::paginate(8);
 
         if($this->search !== null) {
-            $products = Product::where('name', 'like', '%' .$this->search. '%')->paginate(12);
+            $products = Product::where('name', 'like', '%' .$this->search. '%')->paginate(4);
         }
         return view('livewire.product-index', [
             'products' => $products,

@@ -1,0 +1,12 @@
+.floating-label-field {
+  border-width: 0;
+  color: rgba(#2c3e50, .75);
+  &:focus {
+    outline: 0;
+    box-shadow: 0;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+}

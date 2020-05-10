@@ -26,15 +26,15 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-turbolinks-action="replace" href="#">
+          <a class="nav-link" data-turbolinks-action="replace" href="/students">
             <span data-feather="bar-chart-2"></span>
-            Reports
+            Student
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-turbolinks-action="replace" href="#">
+          <a class="nav-link" data-turbolinks-action="replace" href="/translators">
             <span data-feather="layers"></span>
-            Integrations
+            Translators
           </a>
         </li>
       </ul>

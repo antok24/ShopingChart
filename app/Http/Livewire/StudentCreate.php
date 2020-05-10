@@ -27,7 +27,7 @@ class StudentCreate extends Component
 
     private function resetInput()
     {
-        $this->name = null;
+        $this->nama = null;
         $this->email = null;
     }
     

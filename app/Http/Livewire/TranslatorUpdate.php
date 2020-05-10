@@ -20,7 +20,7 @@ class TranslatorUpdate extends Component
     public function UpdateDataTranslator()
     {
         $this->validate([
-            'nik' => 'required|unique:translators,nik|min:16|max:20',
+            'nik' => 'required|min:16|max:20',
             'nama' => 'required|max:100',
             'ijazah' => 'required|max:4',
             'bidang_keahlian' => 'required|max:100'

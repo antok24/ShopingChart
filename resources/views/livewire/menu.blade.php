@@ -37,6 +37,12 @@
             Translators
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" data-turbolinks-action="replace" href="/buku">
+            <span data-feather="layers"></span>
+            Buku
+          </a>
+        </li>
       </ul>
     </div>
 </nav>

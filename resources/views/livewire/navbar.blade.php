@@ -2,7 +2,7 @@
   <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">ShoppingCart</a>
   <ul class="navbar-nav px-3">
     <li class="navitem">
-      <a href="/carts" data-turbolinks-action="replace" class="nav-link"><span data-feather="shopping-bag"></span>
+      <a href="/carts" data-turbolinks-action="replace" class="nav-link">
           Cart ({{ $cartTotal }})
       </a>
     </li>

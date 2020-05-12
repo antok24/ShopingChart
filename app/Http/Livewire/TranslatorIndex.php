@@ -10,6 +10,7 @@ class TranslatorIndex extends Component
 {
     use WithPagination;
     public $statusUpdate = false;
+    public $konfirmasi;
 
     protected $listeners = [
         'translatorAdd' => 'handleStore',
@@ -33,12 +34,18 @@ class TranslatorIndex extends Component
         $this->emit('getTranslator', $translators);
     }
 
+    public function konfirmasi($id)
+    {
+        $this->konfirmasi = $id;
+    }
+
     public function delete($id)
     {
         if ($id){
             $data = Translator::find($id);
             $data->delete();
             session()->flash('message', 'Data berhasil di hapus !');
+            return redirect()->to('/translators');
         }
     }
 

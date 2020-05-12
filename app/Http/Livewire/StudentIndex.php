@@ -11,6 +11,7 @@ class StudentIndex extends Component
     use Withpagination;
 
     public $statusUpdate = false;
+    public $konfirmasi;
 
     protected $listeners = [
         'studentAdd' => 'handleStored',
@@ -34,12 +35,19 @@ class StudentIndex extends Component
         $this->emit('getStudent', $student);
     }
 
+    public function konfirmasi($id)
+    {
+        $this->konfirmasi = $id;
+    }
+
     public function delete($id)
     {
         if($id){
             $data = Student::find($id);
             $data->delete();
+
             session()->flash('message', 'Data berhasil di hapus');
+            return redirect()->to('students');
         }
     }
 

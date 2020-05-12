@@ -15,6 +15,6 @@
             <input type="text" name="tahun_terbit" wire:model="tahun_terbit" class="form-control @error('tahun_terbit')is-invalid @enderror">
             @error('tahun_terbit') <span class="error text-danger">{{ $message }}</span>@enderror
         </div>
-         <button type="submit" class="btn btn-primary shadowt">Simpan</button>
+         <button type="submit" class="bg-primary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Simpan</button>
     </form>
 </div>

@@ -35,8 +35,9 @@
         </div>
     </div>
     <div class="form-group row">
-        <div class="col-sm-3">
-            <button type="submit" class="btn btn-primary shadow float-right">Simpan</button>
+        <label for="button" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-4">
+            <button type="submit" class="bg-primary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Simpan</button>
         </div>
     </div>
 </form>

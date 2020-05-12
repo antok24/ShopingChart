@@ -10,6 +10,8 @@ class BukuIndex extends Component
 {
     use WithPagination;
 
+    public $konfirmasi;
+
     public $form = false;
 
     protected $listeners = [
@@ -34,12 +36,19 @@ class BukuIndex extends Component
         $this->emit('getBuku', $buku);
     }
 
+    public function konfirmasi($id)
+    {
+        $this->konfirmasi = $id;
+    }
+
     public function deleteBuku($id)
     {
         if($id){
             $data = Buku::find($id);
             $data->delete();
+
             session()->flash('message','Data buku berhasil dihapus');
+            return redirect()->to('/buku');
         }
         
     }

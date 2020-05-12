@@ -36,7 +36,8 @@ class TranslatorUpdate extends Component
             ]);
 
             $this->resetInput();
-            $this->emit('translatorUpdate', $translators);
+            session()->flash('message', 'Data Translator berhasil di rubah');
+            return redirect()->to('/translators');
 
         }
     }

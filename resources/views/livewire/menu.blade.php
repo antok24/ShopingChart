@@ -1,4 +1,4 @@
-<nav class="col-md-2 d-none d-md-block bg-fuchsia position-fixed sidebar shadow">
+<nav class="col-md-2 d-none d-md-block bg-fuchsia position-fixed sidebar shadow mt-3">
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -39,6 +39,11 @@
         <li class="nav-item">
           <a href="/pegawai" data-turbolinks-action="replace" class="nav-link">
             Pegawai
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/" data-turbolinks-action="replace" class="nav-link">
+            Data Barang
           </a>
         </li>
       </ul>

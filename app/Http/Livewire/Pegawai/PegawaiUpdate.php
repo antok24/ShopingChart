@@ -34,9 +34,10 @@ class PegawaiUpdate extends Component
                 'tanggal_lahir' => $this->tanggal_lahir,
                 'email' => $this->email
             ]);
-
+            
             $this->Resetinput();
-            $this->emit('PegawaiUpdate', $pegawai);
+            session()->flash('message', 'Post successfully updated.');
+            return redirect()->to('/pegawai');
         }
     }
 

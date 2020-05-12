@@ -22,7 +22,7 @@
     @endif
 
 
-    <div class="col-md-9 mb-5">
+    <div class="col-md-12 mb-5">
         <div class="row">
             <table class="table">
                 <thead>
@@ -45,8 +45,12 @@
                     <td>{{ $a->ijazah }}</td>
                     <td>{{ $a->bidang_keahlian }}</td>
                     <td>
-                      <button wire:click="getTranslator({{ $a->id }})" class="btn btn-info text-white">Edit</button>
-                      <button wire:click="delete({{ $a->id }})" class="btn btn-danger text-white">Hapus</button>
+                      <button wire:click="getTranslator({{ $a->id }})" class="bg-primary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Edit</button>
+                      @if ($konfirmasi)
+                        <button wire:click="delete({{ $a->id }})" class="bg-danger text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Yakin ?</button>
+                      @else
+                        <button wire:click="konfirmasi({{ $a->id }})" class="bg-secondary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Delete</button>
+                      @endif
                     </td>
                   </tr>
                 </tbody>

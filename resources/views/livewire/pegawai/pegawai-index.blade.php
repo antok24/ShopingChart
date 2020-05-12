@@ -13,14 +13,19 @@
           {{ session('message') }}
         </div>
     @endif
-  
-    @if ($showform)
-        <livewire:pegawai.pegawai-update>
-    @else
-        <livewire:pegawai.pegawai-create>
+    @if (session()->has('error'))
+        <div class="alert alert-warning">
+          {{ session('error') }}
+        </div>
     @endif
   
-    <div class="col-md-9 mb-5">
+    @if ($showform)
+        <livewire:pegawai.pegawai-update />
+    @else
+        <livewire:pegawai.pegawai-create />
+    @endif
+  
+    <div class="col-md-12 mb-5">
       <div class="row">
           <table class="table">
               <thead>
@@ -43,8 +48,12 @@
                   <td>{{ $a->tempat_lahir }},{{ date('j F Y', strtotime($a->tanggal_lahir)) }}</td>
                   <td>{{ $a->email }}</td>
                   <td>
-                    <button wire:click="getPegawai({{ $a->nip }})" class="btn btn-primary text-white">Edit</button>
-                    <button wire:click="delete({{ $a->nip }})" class="btn btn-danger text-white">Delete</button>
+                    <button wire:click="getPegawai({{ $a->nip }})" class="bg-primary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Edit</button>
+                    @if ($konfirmasi === $a->nip)
+                      <button wire:click="delete({{ $a->nip }})" class="bg-danger text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Yakin ?</button>
+                    @else
+                    <button wire:click="konfirmasiDelete({{ $a->nip }})" class="bg-secondary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Delete</button>
+                    @endif
                   </td>
                 </tr>
                 @endforeach

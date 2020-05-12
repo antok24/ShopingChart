@@ -21,7 +21,7 @@
   @endif
 
 
-  <div class="col-md-9 mb-5">
+  <div class="col-md-12 mb-5">
     <div class="row">
         <table class="table">
             <thead>
@@ -40,8 +40,12 @@
                 <td>{{ $student->nama }}</td>
                 <td>{{ $student->email }}</td>
                 <td>
-                  <button wire:click="getStudent({{ $student->id }})" class="btn btn-primary text-white">Edit</button>
-                  <button wire:click="delete({{ $student->id }})" class="btn btn-danger text-white">Delete</button>
+                  <button wire:click="getStudent({{ $student->id }})" class="bg-primary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Edit</button>
+                  @if ($konfirmasi)
+                    <button wire:click="delete({{ $student->id }})" class="bg-danger text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Yakin ?</button>
+                  @else
+                    <button wire:click="konfirmasi({{ $student->id }})" class="bg-secondary text-white w-32 px-4 py-1 hover:bg-red-600 rounded border shadow">Delete</button>
+                  @endif
                 </td>
               </tr>
               @endforeach

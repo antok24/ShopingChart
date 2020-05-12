@@ -30,7 +30,8 @@ class StudentUpdate extends Component
             ]);
 
             $this->resetInput();
-            $this->emit('StudentUpdate', $student);
+            session()->flash('message', 'Data Student berhasil dirubah.');
+            return redirect()->to('/students');
         }
 
     }

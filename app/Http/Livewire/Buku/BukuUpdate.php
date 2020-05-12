@@ -33,7 +33,8 @@ class BukuUpdate extends Component
             ]);
 
             $this->resetInput();
-            $this->emit('BukuUpdate', $buku);
+            session()->flash('message', 'Data buku berhasil dirubah.');
+            return redirect()->to('/buku');
         }
     }
 

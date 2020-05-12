@@ -7,6 +7,8 @@ use Livewire\Component;
 
 class PegawaiIndex extends Component
 {
+    public $konfirmasi;
+
     public $showform = false;
 
     protected $listeners = [
@@ -31,13 +33,33 @@ class PegawaiIndex extends Component
         $this->emit('getPegawai', $pegawai);
     }
 
+    public function konfirmasiDelete($nip)
+    {
+        $this->konfirmasi = $nip;
+
+        $this->Resetinput();
+    }
+
     public function delete($nip)
     {
         if($nip){
             $data = Pegawai::find($nip);
             $data->delete();
+
             session()->flash('message', 'data pegawai berhasil dihapus!');
+            return redirect()->to('/pegawai');
+        }else{
+        session()->flash('error', 'Data Pegawai gagal di hapus, tidak ditemuka NIP');
         }
+    }
+
+    private function Resetinput()
+    {
+        $this->nip = [];
+        $this->nama_pegawai = [];
+        $this->tempat_lahir = [];
+        $this->tanggal_lahir = [];
+        $this->email = [];
     }
 
     public function handleSimpanpegawai($pegawai)

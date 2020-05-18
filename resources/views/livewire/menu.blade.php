@@ -1,4 +1,4 @@
-<nav class="col-md-2 d-none d-md-block bg-fuchsia position-fixed sidebar shadow mt-3">
+<nav class="col-md-2 d-none d-md-block bg-fuchsia position-fixed sidebar shadow">
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
@@ -42,7 +42,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a href="/" data-turbolinks-action="replace" class="nav-link">
+          <a href="/barang" data-turbolinks-action="replace" class="nav-link">
             Data Barang
           </a>
         </li>

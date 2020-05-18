@@ -4,11 +4,13 @@ namespace App\Http\Livewire\Pegawai;
 
 use App\Pegawai;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class PegawaiIndex extends Component
 {
-    public $konfirmasi;
+    use WithPagination;
 
+    public $konfirmasi;
     public $showform = false;
 
     protected $listeners = [
@@ -33,11 +35,10 @@ class PegawaiIndex extends Component
         $this->emit('getPegawai', $pegawai);
     }
 
-    public function konfirmasiDelete($nip)
+    public function konfirmasi($nip)
     {
         $this->konfirmasi = $nip;
-
-        $this->Resetinput();
+    
     }
 
     public function delete($nip)

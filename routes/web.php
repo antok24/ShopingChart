@@ -10,3 +10,4 @@ Route::livewire('/students', 'student-index')->name('student.index');
 Route::livewire('/translators','translator-index')->name('translator.index');
 Route::livewire('/buku', 'buku.buku-index')->name('buku.index');
 Route::livewire('/pegawai', 'pegawai.pegawai-index')->name('pegawai.index');
+Route::livewire('/barang', 'barang.barang-index')->name('barang.index');
